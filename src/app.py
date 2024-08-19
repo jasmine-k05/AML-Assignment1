@@ -49,7 +49,7 @@ if button:
 
 
 
-    url = "http://127.0.0.1:8000/predict"
+    url = "https://aml-inference-backend.azurewebsites.net/predict"
     response = requests.post(url, json=data)
 
     response_data = response.json()
