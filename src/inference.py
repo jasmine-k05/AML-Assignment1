@@ -3,6 +3,7 @@ from pydantic import BaseModel
 import pickle
 import numpy as np
 import logging
+import uvicorn
 
 # Load the model from the pickle file
 with open('../models/random_forest_model.pkl', 'rb') as file:
@@ -43,3 +44,5 @@ async def predict(data: InputData):
     # Return the prediction result
     return {"prediction": int(prediction[0])}
 
+if __name__ == '__main__':
+    uvicorn.run(app, port=8000, host='0.0.0.0')
