@@ -18,3 +18,4 @@ jobs:
         - run: |
             docker build . -t ${{ secrets.AML_ACR_LOGIN_SERVER }}/croprecommendation:${{ github.run_number }}
             docker push ${{ secrets.AML_ACR_LOGIN_SERVER }}/croprecommendation:${{ github.run_number }}
+
