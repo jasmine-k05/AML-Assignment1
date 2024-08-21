@@ -16,17 +16,14 @@ with st.container():
     
 
     # Input fields for 9 features
-    feature1 = st.text_input("Feature 1")
-    feature2 = st.text_input("Feature 2")
-    feature3 = st.text_input("Feature 3")
-    feature4 = st.text_input("Feature 4")
-    feature5 = st.text_input("Feature 5")
-    feature6 = st.text_input("Feature 6")
-    feature7 = st.text_input("Feature 7")
-    feature8 = st.text_input("Feature 8")
-    feature9 = st.text_input("Feature 9")
-    feature10 = st.text_input("Feature 10")
-
+    feature1 = st.text_input("Nitrogen")
+    feature2 = st.text_input("Phosphorous")
+    feature3 = st.text_input("Potassium")
+    feature4 = st.text_input("Temperature")
+    feature5 = st.text_input("Humidity")
+    feature6 = st.text_input("pH")
+    feature7 = st.text_input("Rainfall")
+    
     button = st.button("Predict")
 
 
@@ -38,22 +35,18 @@ if button:
         "feature_3" : float(feature4),
         "feature_4" : float(feature5),
         "feature_5" : float(feature6),
-        "feature_6" : float(feature7),
-        "feature_7" : float(feature8),
-        "feature_8" : float(feature9),
-        "feature_9" : float(feature10),
-        
+        "feature_6" : float(feature7)
 
     }
 
 
 
 
-    url = "http://127.0.0.1:8000/predict"
+    url = "https://aml-inference-backend.azurewebsites.net/predict"
     response = requests.post(url, json=data)
 
     response_data = response.json()
 
     print(response_data)
 
-    st.write(f"The predicted value for the input features provided is {response_data['prediction']}")
+    st.write(f"The predicted crop for the input features provided is {response_data['prediction']}")
