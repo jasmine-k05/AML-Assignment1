@@ -20,10 +20,7 @@ class InputData(BaseModel):
     feature_4: float
     feature_5: float
     feature_6: float
-    feature_7: float
-    feature_8: float
-    feature_9: float
-
+    
 # Define the prediction endpoint
 @app.post("/predict")
 async def predict(data: InputData):
@@ -31,7 +28,7 @@ async def predict(data: InputData):
 
     # Convert input data to a numpy array
     input_features = np.array([[data.feature_0, data.feature_1, data.feature_2, data.feature_3, data.feature_4,
-                                data.feature_5, data.feature_6, data.feature_7, data.feature_8, data.feature_9]])
+                                data.feature_5, data.feature_6]])
 
 
     print(input_features)
