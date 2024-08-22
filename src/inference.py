@@ -6,7 +6,7 @@ import logging
 import uvicorn
 
 # Load the model from the pickle file
-with open('../models/naive_bayes_model.pkl', 'rb') as file:
+with open('../models/random_forest_model.pkl', 'rb') as file:
     model = pickle.load(file)
     
 with open('../models/labels_mapping_dict_inverse.pkl', 'rb') as file:
