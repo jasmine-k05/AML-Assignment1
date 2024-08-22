@@ -42,7 +42,7 @@ async def predict(data: InputData):
     print(prediction)
     
     # Return the prediction result
-    return {"prediction": inverse_mapping[prediction[0]]}
+    return {"prediction": inverse_mapping[int(prediction[0])]}
 
 if __name__ == '__main__':
     uvicorn.run(app, port=8000, host='0.0.0.0')
